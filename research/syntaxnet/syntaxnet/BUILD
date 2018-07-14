@@ -28,6 +28,11 @@ tf_proto_library_cc(
     srcs = ["feature_extractor.proto"],
 )
 
+proto_library(
+    name = "sentence_proto_proto_lib",
+    srcs = ["sentence.proto"],
+)
+
 tf_proto_library_cc(
     name = "sentence_proto",
     srcs = ["sentence.proto"],
@@ -81,6 +86,7 @@ cc_library(
     hdrs = ["base.h"],
     visibility = ["//visibility:public"],
     deps = [
+        "@protobuf_archive//:protobuf",
         "@com_googlesource_code_re2//:re2",
         "@org_tensorflow//third_party/eigen3",
     ] + select({
