@@ -164,7 +164,7 @@ def export_to_graph(master_spec,
                     export_path,
                     external_graph,
                     export_moving_averages,
-                    build_runtime_graph,
+                    build_runtime_graph=False,
                     signature_name='model'):
   """Restores a model and exports it in SavedModel form.
 
