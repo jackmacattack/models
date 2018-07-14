@@ -92,7 +92,7 @@ cc_library(
     ] + select({
         "//conditions:default": [
             "@org_tensorflow//tensorflow/core:framework_headers_lib",
-            "@org_tensorflow//tensorflow/core:lib",
+#            "@org_tensorflow//tensorflow/core:lib",
         ],
         "@org_tensorflow//tensorflow:darwin": [
             "@org_tensorflow//tensorflow/core:framework_headers_lib",
@@ -287,7 +287,7 @@ cc_library(
     deps = [
         ":base",
         ":utils",
-        "@org_tensorflow//tensorflow/core:lib",
+        #"@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
