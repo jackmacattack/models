@@ -61,4 +61,5 @@ tf_proto_library_py(
 tf_proto_library_py(
     name = "export_pb2",
     srcs = ["export.proto"],
+    protodeps = [":spec_pb2"],
 )
