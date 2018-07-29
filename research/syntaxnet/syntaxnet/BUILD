@@ -522,14 +522,14 @@ cc_library(
     alwayslink = 1,
 )
 
-cc_binary(
+load("@org_tensorflow//tensorflow:tensorflow.bzl", "tf_custom_op_library")
+
+tf_custom_op_library(
     name = "parser_ops.so",
     linkopts = select({
         "//conditions:default": ["-lm"],
         "@org_tensorflow//tensorflow:darwin": [],
     }),
-    linkshared = 1,
-    linkstatic = 1,
     deps = [
         ":parser_ops_cc",
     ],
