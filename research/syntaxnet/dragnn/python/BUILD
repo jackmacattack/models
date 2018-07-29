@@ -1,13 +1,13 @@
 package(default_visibility = ["//visibility:public"])
 
-cc_binary(
+load("@org_tensorflow//tensorflow:tensorflow.bzl", "tf_custom_op_library")
+
+tf_custom_op_library(
     name = "dragnn_cc_impl.so",
     linkopts = select({
         "//conditions:default": ["-lm"],
         "@org_tensorflow//tensorflow:darwin": [],
     }),
-    linkshared = 1,
-    linkstatic = 1,
     deps = [
         "//dragnn/components/stateless:stateless_component",
         "//dragnn/components/syntaxnet:syntaxnet_component",
